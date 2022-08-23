@@ -2,8 +2,8 @@
 Plik readme.md prezentuje zawartość folderu w którym się znajduje/
 
 ## Pobierz
-1. [GIT]
-2. [VSC]
+1. [GIT] https://git-scm.com/download/win
+2. [VSC] https://code.visualstudio.com/download
 
 ## STWÓRZ REPOZYTORIUM
 1. Stwórz folder ( kursfont )
