@@ -85,7 +85,7 @@ input,textarea{
 
 
 img{
-   max-widht:100%;
+   max-width: 100%;
 }
 .wrapper{
     border:5px dashed pink;
