@@ -4,35 +4,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <header class="bodyHeader">
+
         <h1>
             Portfolio Karolina Mikonowicz
         </h1>
+        <nav>
+            <!-- ORDERED LIST - lista numerowana -->
+            <!-- <ol>
+                <LI>LIST ITEM1</LI>
+                <LI>LIST ITEM2</LI>
+                <LI>LIST ITEM3</LI>
+            </ol> -->
+            <!-- UNORDERED LIST - lista nienumerowana -->
+            <ul>
+                <li>O MNIE</li>
+                <li>PROJEKTY</li>
+                <li>KONTAKT</li>
+            </ul>
+    
+        </nav>
     </header>
 
 
             <!-- GŁÓWNA NAWIGACJA -->
-    <nav>
-        <!-- ORDERED LIST - lista numerowana -->
-        <!-- <ol>
-            <LI>LIST ITEM1</LI>
-            <LI>LIST ITEM2</LI>
-            <LI>LIST ITEM3</LI>
-        </ol> -->
-        <!-- UNORDERED LIST - lista nienumerowana -->
-        <ul>
-            <li>O MNIE</li>
-            <li>PROJEKTY</li>
-            <li>KONTAKT</li>
-        </ul>
-
-    </nav>
 
 
-    <main>
+    <main class="wrapper">
         <header>
             <h2>O MNIE</h2>
         </header>
@@ -47,7 +49,7 @@
     
     
     
-    <article>
+    <article >
         <!-- <header> NAGŁÓWEK AUTONOMICZNEJ CZĘŚCI STRONY </header> -->
     
         <!-- im większy border tym grubsza tabelka -->
@@ -80,31 +82,32 @@
         </tbody>
         </table>
 
-        
-
-
     </article>
+   
     <header>
         <h2>UMIEJĘTNOŚCI</h2>
     </header>
+  
+    <header>
+        <h2>KONTAKT</h2>
+    </header>
    
     <section>
-        <header>
-            <H2>KONTAKT</H2>
-        </header>
+       
+        <!-- <header>
+            <h2>KONTAKT</h2>
+        </header> -->
 
         <!-- CONTENT -->
         
         <form>
             <input type="email" placeholder="TWÓJ EMAIL"/>
             <input type="text" placeholder="TUTUŁ"/>
-            <br/>
-            <br/>
-            <textarea cols="30" rows="10"></textarea>
-            <br/>
+            <!-- <br/>
+            <br/> -->
+            <textarea cols="30" rows="10" placeholder="WIADOMOŚĆ"></textarea>
+            <!-- <br/> -->
             <input type="submit" value="WYŚLIJ">
-
-
         </form>
 
     </section>

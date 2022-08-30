@@ -12,3 +12,9 @@ Kliknij na kontrola źródła (3 zakładka od góry) i "Publish to github", nast
 
 git config --global user.name kmikonowicz
 git config --global user.email karolinamikonopwicz@gmail.com
+
+#POLECANE LINKI
+[ćWICZENIE_Z_FLEXA] (https://flexboxfroggy.com/#pl)
+[DOPEŁNIENIE_KURSU] (https://www.w3schools.com/)
+[INSPIRACXJE] (https://codepen.io/)
+[ROZWIĄZANIA_PROBLEMÓW] (https://stackoverflow.com/)
