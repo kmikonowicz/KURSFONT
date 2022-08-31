@@ -26,6 +26,7 @@ article{
     /* wysokość na 90 ze 100 kratek szerokości strony */
     height:90vw;
     /* dzięki usteleniu wspólnej wielkości na width i height otrzymujemy kwadrat */
+    background-color: blueviolet;
 }
 
 /* article img{
