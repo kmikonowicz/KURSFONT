@@ -1,11 +1,23 @@
+:root{
+    --foreground-dark:#58478F;
+    --foreground-light: #C4B3FF;
+    --background-dark:#8F8739;
+    --background-light: #DBD384;
+    /* #9984DB */
+
+}
+*{box-sizing: border-box;}
+
 body{
-background-color: rgb(196, 191, 189);
+/* background-color: rgb(196, 191, 189); */
+background-color: var(--background-dark);
 margin:0;
 min-height: 1500px;
 }
 
 .bodyheader{
-    border: 5px dashed rgb(59, 57, 177);
+    background-color: var(--background-light);
+    /* border: 5px dashed rgb(59, 57, 177); */
     display:flex;
     justify-content: flex-end; 
     justify-content: space-between; 
@@ -14,50 +26,91 @@ min-height: 1500px;
     position:sticky;
     top:0;
 }
-/* nadrzędny jest ten bardziej doprecyzowany */
+/* nadrzędny jest ten bardziej doprecyzowany
 main header{
     border: 2px dashed rgb(40, 97, 172);
     
-}
+} */
 
 h1{
     /* jeśli podajemy 2 wartości to jest góra,dół */
-    margin: 10px;
+    margin: 5px;
+    font-size: clamp(1.4rem, 2.0vw, 2.5rem);
+}
+#toogler{
+    display: none;
+}
+
+#toogler:checked ~ul{
+    right: 0;
+    border: 5px dashed pink;
+}
+
+
+label{
+    /* border: 5px dashed red; */
+    width: 2rem;
+    height: 2rem;
+    top: 0;
+    right: 0;
+    margin: 0.2rem;
+    position:absolute;
+    
+}
+
+label div{
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+}
+
+label div:nth-child(1){
+    top:calc(10% - 1px);
+}
+label div:nth-child(2){
+    top:calc(45% - 1px);
+}
+label div:nth-child(3){
+    top:calc(80% - 1px);
 }
 
 ul{
-    /* border: 2px dashed blue;
-    list-style-type: none;
-    margin: 0;
-    padding: 0; */
+/* /* border: 2px dashed blue; */
+list-style-type: none;
+border: 5px dashed yellow;
+/* margin: 0;
+padding: 0; */
+right:100%;
+position:fixed;
+top:3rem;
 
-   /* ułożenie elementów obok siebie */
-    display:flex;
+/* ułożenie elementów obok siebie */
+display:flex;
+/* równe odległości od siebie (te same odległości do krawędzi pola) */
+justify-content: space-around;
 
-    /* ułożenie elementów na środku */
-    /* justify-content: center; */
+/* ułożenie elementów na środku */
+/* justify-content: center; */
 
-    /* ułożenie elementów na początku */
+/* ułożenie elementów na początku */
     /* justify-content: flex-start; */
 
     /* ułożenie elementów na końcu */
     /* justify-content: flex-end; */
 
-    /* równe odległości od siebie (te same odległości do krawędzi pola) */
-    justify-content: space-around;
 
     /* równe odległości między elementami */
-    justify-content: space-evenly;
-
-
+    /* justify-content: space-evenly; */
 }
 
-li{
+
+li{ 
     border: 2px dashed rgb(222, 224, 68);
     /* position:static; */
-    /* position:fixed;
+    /* /* position:fixed; */
     top:0;
-    left:0; */
+    left:0;
 
 }
 
@@ -74,8 +127,9 @@ form{
     gap:5px;
     display:flex;
     flex-direction: column;
-    margin: 10px 10px 10px 20px;
-    width: 150%;
+    /* margin: 10px 10px 10px 20px; */
+    width: 50%;
+    padding:15px;
 }
 
 input,textarea{
@@ -88,7 +142,7 @@ img{
    max-width: 100%;
 }
 .wrapper{
-    border:5px dashed pink;
+    /* border:5px dashed pink; */
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -99,8 +153,3 @@ img{
     width:100%
 }
 
-h2{
-    display:flex;
-    flex-direction: column;
-    align-items: left; 
-}
