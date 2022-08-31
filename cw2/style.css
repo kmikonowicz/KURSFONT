@@ -26,7 +26,6 @@ article{
     /* wysokość na 90 ze 100 kratek szerokości strony */
     height:90vw;
     /* dzięki usteleniu wspólnej wielkości na width i height otrzymujemy kwadrat */
-    background-color: blueviolet;
 }
 
 /* article img{
@@ -53,7 +52,7 @@ article img{
 }
 
 article p {
-    background-color: rgb(140, 77, 212);
+    background-color: rgb(132, 132, 230);
     /* opóźnia zmianę elementu o jakiś czas - 0,5 sekundy */
     transition:.5s;
     /* border: 5px dashed yellow;
@@ -85,7 +84,7 @@ header{
     krawędzi */
     position:sticky;
     top:0;
-    background-color: aqua;
+    background-color: rgb(132, 122, 230);
     /* ułożenie elementu ponad innymi podczas przewijania, im większa liczbaz-index tym
     element bliżej użytkownika w osi Z */
     z-index: 1;
@@ -112,7 +111,7 @@ h1{
     article{
         width: 35vw;
         height: 35vw;
-        margin-bottom: 15vw;
+        margin-bottom: 5vw;
     }
     main{
         flex-direction: row;
