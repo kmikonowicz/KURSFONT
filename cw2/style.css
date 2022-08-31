@@ -111,7 +111,7 @@ h1{
     article{
         width: 35vw;
         height: 35vw;
-        margin-bottom: 5vw;
+        margin-bottom: 15vw;
     }
     main{
         flex-direction: row;
