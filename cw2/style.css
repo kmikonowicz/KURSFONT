@@ -52,7 +52,7 @@ article img{
 }
 
 article p {
-    background-color: antiquewhite;
+    background-color: rgb(140, 77, 212);
     /* opóźnia zmianę elementu o jakiś czas - 0,5 sekundy */
     transition:.5s;
     /* border: 5px dashed yellow;
