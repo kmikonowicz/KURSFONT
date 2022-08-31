@@ -15,26 +15,27 @@ margin:0;
 min-height: 1500px;
 }
 
-.bodyheader{
-    background-color: var(--background-light);
-    /* border: 5px dashed rgb(59, 57, 177); */
-    display:flex;
-    justify-content: flex-end; 
-    justify-content: space-between; 
-   /* ustawienie elementów w pionie */
-    align-items: center;
-    position:sticky;
-    top:0;
+a{
+    text-decoration: none;
+    color: inherit;
+    margin: 2rem;
 }
 /* nadrzędny jest ten bardziej doprecyzowany
 main header{
     border: 2px dashed rgb(40, 97, 172);
     
 } */
-
+.bodyHeader{
+    background-color: var(--background-light);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position:sticky;
+    top:0;
+}
 h1{
     /* jeśli podajemy 2 wartości to jest góra,dół */
-    margin: 5px;
+    margin: 5px 10px;
     font-size: clamp(1.4rem, 2.0vw, 2.5rem);
 }
 #toogler{
@@ -43,7 +44,6 @@ h1{
 
 #toogler:checked ~ul{
     right: 0;
-    border: 5px dashed pink;
 }
 
 
@@ -54,8 +54,7 @@ label{
     top: 0;
     right: 0;
     margin: 0.2rem;
-    position:absolute;
-    
+    position:absolute; 
 }
 
 label div{
@@ -75,20 +74,37 @@ label div:nth-child(3){
     top:calc(80% - 1px);
 }
 
+#toogler:checked ~ label div:nth-child(1){
+    transform:rotate(45deg);
+    top: calc(50% - 1px);
+}
+
+#toogler:checked ~ label div:nth-child(2){
+    opacity: 0;
+}
+#toogler:checked ~ label div:nth-child(3){
+    transform:rotate(-45deg);
+    top: calc(50% - 1px);
+}
+
 ul{
 /* /* border: 2px dashed blue; */
+background-color: var(--background-light);
 list-style-type: none;
-border: 5px dashed yellow;
-/* margin: 0;
-padding: 0; */
-right:100%;
+margin: 0;
+padding: 0;
+right:-100%;
 position:fixed;
-top:3rem;
+top:2.3rem;
+height: calc(100% - 2.3rem);
+transition: .5s;
+padding: .5rem;
+flex-direction: column;
 
 /* ułożenie elementów obok siebie */
 display:flex;
 /* równe odległości od siebie (te same odległości do krawędzi pola) */
-justify-content: space-around;
+/* justify-content: space-around; */
 
 /* ułożenie elementów na środku */
 /* justify-content: center; */
@@ -106,7 +122,7 @@ justify-content: space-around;
 
 
 li{ 
-    border: 2px dashed rgb(222, 224, 68);
+    /* border: 2px dashed rgb(222, 224, 68); */
     /* position:static; */
     /* /* position:fixed; */
     top:0;
@@ -115,10 +131,15 @@ li{
 }
 
 /* warunek wypałujący wyświetlaniwe na telefonie */
-@media (max-width:768px){
+@media (min-width:768px){
     ul{
         /* display:none; */
-        flex-direction: column;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+    }
+    label{
+        display: none;
     }
 }
 
@@ -135,8 +156,6 @@ form{
 input,textarea{
     padding:10px;
 }
-
-
 
 img{
    max-width: 100%;
