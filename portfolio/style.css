@@ -4,21 +4,23 @@
     --background-dark:#8F8739;
     --background-light: #DBD384;
     /* #9984DB */
-
 }
 *{box-sizing: border-box;}
-
+html{scroll-behavior: smooth;}
 body{
 /* background-color: rgb(196, 191, 189); */
 background-color: var(--background-dark);
 margin:0;
-min-height: 1500px;
+min-height: 1000px;
+font-family: 'Chelsea Market', cursive;
 }
 
 a{
     text-decoration: none;
     color: inherit;
-    margin: 2rem;
+    /* margin: .5rem; */
+    display:flex;
+    align-items: center;
 }
 /* nadrzędny jest ten bardziej doprecyzowany
 main header{
@@ -30,23 +32,26 @@ main header{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    position:sticky;
+    position:fixed;
     top:0;
+    /* box-shadow: 2px 10px 10px black; */
+    box-shadow: 0px 16px 29px 2px rgba(0, 0, 0, 1);
+    width: 100%;
 }
 h1{
     /* jeśli podajemy 2 wartości to jest góra,dół */
     margin: 5px 10px;
     font-size: clamp(1.4rem, 2.0vw, 2.5rem);
 }
+/* h2{
+    margin:1rem;
+} */
 #toogler{
     display: none;
 }
-
 #toogler:checked ~ul{
     right: 0;
 }
-
-
 label{
     /* border: 5px dashed red; */
     width: 2rem;
@@ -56,14 +61,13 @@ label{
     margin: 0.2rem;
     position:absolute; 
 }
-
 label div{
     height: 2px;
     background-color: black;
     position: absolute;
-    width: 100%;
+    width: 80%;
+    transition: .2s;
 }
-
 label div:nth-child(1){
     top:calc(10% - 1px);
 }
@@ -73,12 +77,10 @@ label div:nth-child(2){
 label div:nth-child(3){
     top:calc(80% - 1px);
 }
-
 #toogler:checked ~ label div:nth-child(1){
     transform:rotate(45deg);
     top: calc(50% - 1px);
 }
-
 #toogler:checked ~ label div:nth-child(2){
     opacity: 0;
 }
@@ -86,13 +88,12 @@ label div:nth-child(3){
     transform:rotate(-45deg);
     top: calc(50% - 1px);
 }
-
 ul{
 /* /* border: 2px dashed blue; */
 background-color: var(--background-light);
 list-style-type: none;
 margin: 0;
-padding: 0;
+padding: .5rem;
 right:-100%;
 position:fixed;
 top:2.3rem;
@@ -100,7 +101,6 @@ height: calc(100% - 2.3rem);
 transition: .5s;
 padding: .5rem;
 flex-direction: column;
-
 /* ułożenie elementów obok siebie */
 display:flex;
 /* równe odległości od siebie (te same odległości do krawędzi pola) */
@@ -119,18 +119,15 @@ display:flex;
     /* równe odległości między elementami */
     /* justify-content: space-evenly; */
 }
-
-
 li{ 
     /* border: 2px dashed rgb(222, 224, 68); */
     /* position:static; */
     /* /* position:fixed; */
     top:0;
     left:0;
-    margin:1rem;
+    margin:.3rem;
 
 }
-
 /* warunek wypałujący wyświetlaniwe na telefonie */
 @media (min-width:768px){
     ul{
@@ -143,33 +140,90 @@ li{
         display: none;
     }
 }
-
 form{
-    padding:10px;
+    padding:1rem;
     gap:5px;
     display:flex;
     flex-direction: column;
     /* margin: 10px 10px 10px 20px; */
-    width: 100%;
-    padding:5px;
+    /* width: 100%; */
+    margin:.1rem;
+    background-color: var(--foreground-light);
+    box-shadow: 0px 0px 66px 11px rgba(0, 0, 0, 1);
+    border-radius: .5rem;
 }
-
 input,textarea{
     padding:10px;
 }
-
 img{
-   max-width: 100%;
+    max-width: 100%;
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 1);
 }
 .wrapper{
     /* border:5px dashed pink; */
     display:flex;
     flex-direction: column;
     align-items: center;
+    /* padding-top: 3.5rem; */
+    padding: 3.5rem .5rem 0 .5rem;
 }
-
-
 .wrapper header{
     width:100%
 }
-
+/* .content{
+    text-align: justify;
+} */
+.wrapper h2 {
+    margin:0;
+}
+.wrapper p {
+    margin:0;
+    margin-bottom: 2rem;
+    line-height: 1.2rem;
+}
+table{
+    /* border:2px dashed red; */
+    box-shadow: 0px 0px 38px -9px rgba(0, 0, 0, 1);
+    width: 100%;
+    /* padding: 1rem; */
+    border-collapse: collapse;
+  
+    
+}
+/* thead{
+    background-color: var(--foreground-dark);
+} */
+/* tbody{
+    background-color: var(--foreground-light);
+} */
+td{
+    padding: .25rem;}
+    th{
+        background-color: var(--foreground-dark);
+        padding: .5rem;
+    }
+    tr:nth-child( even ){
+        background-color: var(--foreground-light);
+    }
+    .tablewrapper{
+        padding: 1rem;
+    }
+footer{
+        margin-top: 3rem;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: .8rem;
+}
+footer ol{
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+    
+footer p{
+    display: flex;
+    margin:0;
+}
