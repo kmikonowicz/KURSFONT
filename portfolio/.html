@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/style.css">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
+</head>
+<body>
+  <header class="bodyHeader">
+    <h1>
+      Portfolio Antoni Pietryga
+    </h1>
+    <!-- GŁÓWNA NAWIGACJA -->
+    <nav>
+      <!-- ORDERED LIST - LISTA NUMEROWANA -->
+      <!-- LIST ITEM - ELEMENT LISTY -->
+      <!-- <ol>
+        <li>list item1 </li>
+        <li>list item2 </li>
+        <li>list item3 </li>
+      </ol> -->
+
+
+      <input type="checkbox" id="toggler">
+      <label for="toggler">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+
+      <!-- UNORDERED LIST - LISTA NIENUMEROWANA -->
+      <ul>
+        <li>
+          <a href="#about">
+            <span class="material-symbols-outlined">home</span>
+            O&nbsp;MNIE
+          </a>
+        </li>
+        <li>
+          <a href="#skills">
+            <span class="material-symbols-outlined"> settings_accessibility </span>
+            UMIĘTNOŚCI
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <span class="material-symbols-outlined"> call </span>
+            KONTAKT
+          </a>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main id="about" class="wrapper">
+
+    <header>
+      <h2>O&nbsp;MNIE</h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi excepturi consectetur cumque dignissimos, quae perferendis impedit obcaecati neque. Nobis, molestiae laborum aliquid esse quisquam dolorem dicta? Inventore, tenetur dicta. </p>  
+    </header>
+
+    <div class="content">
+      <img src="img/laptop.webp" alt="PERSONAL IMAGE" />
+    </div>
+
+  </main>
+
+  <article id="skills" class="wrapper">
+    <header>
+      <h2>UMIĘTNOŚCI</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, impedit accusamus sunt ea sit ipsa quasi totam deserunt nemo consequuntur, animi at optio cupiditate laborum amet hic, vel porro rem.</p>
+    </header>
+
+    <div class="content">
+      <div class="tableWrapper">
+        <!-- im większy border tym grubsza tabelka -->
+        <table>
+          <!-- nagłówek tabeli -->
+          <thead>
+            <!-- wiersz nagłówkowy -->
+            <tr>
+              <!-- TABLE HEADING komórka nagłówka -->
+              <th>LP. </th>
+              <th>TECHNOLOGIA</th>
+              <th>BIEGŁOŚĆ</th>
+            </tr>
+          </thead>
+
+          <!-- tabela właściwa (dane) -->
+          <tbody>
+            <!-- TABLE ROW (wiersz) -->
+            <tr>
+              <!-- TABLE DIVIDE (podział wiersza) -->
+              <td>1</td>
+              <td>HTML</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>CSS</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>SASS (SCSS)</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </article>
+
+  <section id="contact" class="wrapper">
+    <header>
+      <h2>KONTAKT</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat laborum obcaecati expedita doloremque accusamus libero aut amet sint! Assumenda voluptate sunt pariatur commodi quos quis ipsa accusamus, adipisci numquam fugit.</p>
+    </header>
+
+    <div class="content">
+
+      <form>
+        <input type="email" placeholder="EMAIL" />
+        <input type="text" placeholder="TYTUŁ">
+        <textarea cols="21" rows="5" placeholder="WIADOMOŚĆ"></textarea>
+        <input type="submit" value="WYŚLIJ">
+      </form>
+    </div>
+
+  </section>
+
+  <footer>
+    <ol>
+      <li>
+        <a href="#about">O&nbsp;mnie</a>
+      </li>
+      <li>
+        <a href="#skills">Umiejętności</a>
+      </li>
+      <li>
+        <a href="#contact">Kontakt</a>
+      </li>
+    </ol>
+    <p>
+      Copyright &copy; 2022 
+    </p>
+  </footer>
+</body>
+</html>
