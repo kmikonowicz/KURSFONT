@@ -15,6 +15,16 @@ const views = [ 		// tablica obiektów
     "src" : "3.webp",
     "name" : "Trzeci",
     "alt" : "Beach"
+    },
+    {
+    "src" : "4.webp",
+    "name" : "Czwarty",
+    "alt" : "Beach"
+    },
+    {
+    "src" : "5.webp",
+    "name" : "Piąty",
+    "alt" : "Beach"
     }
 ];
 
@@ -55,16 +65,9 @@ function modifyCurrentSlide( direction) {
     if (direction=='left'){
         currentSlide--;
     }
-    // sprawdź czy nr slajdu nie jest większy niż ilość wszystkich slajdów,
-    // jeżeli to pokaż piwerwszy slajd
     if(currentSlide<0){
-        currentSlide=2;
+        currentSlide=views.length-1;
     }
-
-    getSingleView(currentSlide)
-
-    console.log(currentSlide)
-    // wyświetl zdjęcie i tekst na podstawie currenSlide
     getSingleView(currentSlide)
 }
 // pobierz prawą strzałkę z HTML'a ( za pomocą DOM - Document Object Model)
