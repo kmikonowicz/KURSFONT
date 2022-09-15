@@ -42,14 +42,27 @@ function makeWall(x, y, w, h, type = 'wall') {
 // tablica map przechowująca tablice zawierające informacje o ścianie
 // (każdy pojedyńczy element tablicy map to jedna ściana)
 const map = [
-  [0,0,20,20, 'start'],
-  [10,20,20,10],
-  [20,30,20,10],
-  [30,40,20,11],
-  [40,50,20,10],
-  [50,60,20,10],
-  [60,70,30,10],
-  [80,80,20,20, 'meta']   
+  // [0,0,20,20, 'start'],
+  // [10,20,20,10],
+  // [20,30,20,10],
+  // [30,40,20,11],
+  // [40,50,20,10],
+  // [50,60,20,10],
+  // [60,70,30,10],
+  // [80,80,20,20, 'meta'] 
+  
+  [0,15,10,10, 'start'],
+  [0,10,50,5],
+  [40,10,10,80],
+  [20,70,50,5],
+  [20,70,5,20],
+  [20,90,70,5],
+  [90,20,5,75],
+  [50,20,50,5],
+  [20,10,5,70],
+  [70,20,10,55],
+  [70,15,20,10],
+  [90,15,10,10, 'meta'] 
 ]
 
 // pętla, pobierająca elementy tablicy map jako wall
@@ -153,7 +166,8 @@ const modal = {
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      text-aling:center;
+      text-align:center;
+      text:center;
     `
 
       // display:none;
