@@ -81,9 +81,14 @@ const game = {
     game.buttons.start.onclick = ""
     // "nasłuchuj" kursora na polu meta (jeśli się tam pojawi, wywoła 
     // metodę game.metaTrigger)
-    game.buttons.meta.addEventListener('mousemove', game.metaTrigger)
+    // game.buttons.meta.addEventListener('mousemove', game.metaTrigger)
+    game.buttons.meta.addEventListener('mousemove', game.over)
+    // jeśli nakierujesz myszkę na gamePlane po starcie to przegrywasz grę
     gamePlane.addEventListener('mousemove', game.gamePlaneListener)
+    // wyciągamy jako wall każdą ścianę osobno
     for(const wall of game.buttons.walls){
+      // jeżeli twoj kursor jest na klasie wall, to nie wyzwalaj żadnych innych 
+      // słuchaczy (eventListenerów)
         wall.addEventListener('mousemove', game.wallListener )
     }
     console.log("GAME STARTED")
@@ -98,23 +103,27 @@ const game = {
   },
 
   // metoda wywołująca się po nakierowaniu myszką na metę
-  metaTrigger(){
-    // zakończ grę z pozytywnym wynikiem
-    game.over(true)
-  },
+  // metaTrigger(){
+  //   // zakończ grę z pozytywnym wynikiem
+  //   game.over(true)
+  // },
   
   // zakończ grę - wynik zależy od result - może być true - wygrana,
   // lub false - przegrana
   over(result){
     // wyświetl odpowiedni komunikat
     if(result){
-      console.log("YOU WIN!")
+      // console.log("YOU WIN!")
+      modal.show('WYGRANA!')
     }else{
-      console.log("YOU LOSE")
+      // console.log("YOU LOSE")
+      modal.show('PRZEGRANA')
     }
     // zdejmij słuchacza z pola meta (przestajemy nasłuchiwać kursor 
     // na polu meta)
-    game.buttons.meta.removeEventListener('mousemove', game.metaTrigger)
+    // game.buttons.meta.removeEventListener('mousemove', game.metaTrigger)
+    game.buttons.meta.removeEventListener('mousemove', game.over)
+
     gamePlane.removeEventListener('mousemove', game.gamePlaneListener)
     for(const wall of game.buttons.walls){
         wall.removeEventListener('mousemove', game.wallListener)
@@ -127,40 +136,55 @@ const game = {
 // ta metoda wywołuje się po każdym odświeżeniu strony
 game.init()
 
-// KOMUNIKATY
+// KOMUNIKATY 
 const modal = {
-    dom: document.createElement("div"),
-    init(){
-        modal.dom.style.cssText=`
-            border:10px dashed red;
-            position: fixed;
-            width: 80vw;
-            height: 80vh;
-            left:10vw;
-            top:10vh;
-            background:red;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            `
-        document.body.append(modal,dom)
+  dom : document.createElement("div"),
+  h1 : document.createElement("h1"),
+  init(){
+    modal.dom.style.cssText = `
+      // border:10px dashed;
+      position:fixed;
+      width:80vw;
+      height:80vh;
+      left:10vw;
+      top:10vh;
+      background:rgb(180, 108, 108);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-aling:center;
+    `
 
-        const h1= document.createElement("h1")
-        modal.dom.append(h1)
+      // display:none;
+    document.body.append(modal.dom)
 
-        const button= document.createElement("button")
-        button.innerHTML = "OK"
-        button.onclick = function() {modal.hide()}
-        modal.dom.append(button)
+    const h1 = document.createElement("h1")
+    modal.h1.innerHTML = "show"
+    modal.dom.append(modal.h1)
 
-    }
-    // show(){
-    //     modal.dom.style.display= "flex";
-    // }
-    // hide(){
-    //     modal.dom.style.display= "none";
-    // }
+    const button = document.createElement("button")
+    button.innerHTML = "OK"
+    button.style.cssText=`
+      padding:1rem 4 rem;
+      border-radius:1rem;
+      cursor:pointer;
+      `
+    button.onclick = function () { modal.hide() }
+    modal.dom.append(button)
+  },
+
+  show(text) { 
+    modal.dom.style.display = "flex";
+    modal.h1.innerHTML=text
+  },
+
+  hide(){
+    modal.dom.style.display = "none";
+  }
+
 }
+
 modal.init()
-// modal.show()
+modal.show('Kliknij...')
+game.init()
