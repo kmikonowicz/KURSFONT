@@ -10,8 +10,8 @@ const gamePlane = document.querySelector('.gamePlane')
 function makeWall(x, y, w, h, type = 'wall') {  
 
   // ustaw kolor ściany
-  let color = 'green' // domyślny
-  if(type == 'start') { color = 'blue' }
+  let color = 'rgb(190, 108, 108)' // domyślny
+  if(type == 'start') { color = 'blue'  }
   if(type == 'meta') { color = 'orange' }
 
   // Tworzymy nowy element HTML (div)
@@ -25,6 +25,8 @@ function makeWall(x, y, w, h, type = 'wall') {
     left:${x}%;
     top:${y}%;
     position:absolute;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
   `
   // dodajemy klasy do każdego diva
   wall.className = 'wall'
@@ -42,27 +44,27 @@ function makeWall(x, y, w, h, type = 'wall') {
 // tablica map przechowująca tablice zawierające informacje o ścianie
 // (każdy pojedyńczy element tablicy map to jedna ściana)
 const map = [
-  // [0,0,20,20, 'start'],
-  // [10,20,20,10],
-  // [20,30,20,10],
-  // [30,40,20,11],
-  // [40,50,20,10],
-  // [50,60,20,10],
-  // [60,70,30,10],
-  // [80,80,20,20, 'meta'] 
+  [0,0,20,20, 'start'],
+  [10,20,20,10],
+  [20,30,20,10],
+  [30,40,20,11],
+  [40,50,20,10],
+  [50,60,20,10],
+  [60,70,30,10],
+  [80,80,20,20, 'meta'] 
   
-  [0,15,10,10, 'start'],
-  [0,10,50,5],
-  [40,10,10,80],
-  [20,70,50,5],
-  [20,70,5,20],
-  [20,90,70,5],
-  [90,20,5,75],
-  [50,20,50,5],
-  [20,10,5,70],
-  [70,20,10,55],
-  [70,15,20,10],
-  [90,15,10,10, 'meta'] 
+  // [0,15,10,10, 'start'],
+  // [0,10,40,5],
+  // [40,10,10,80],
+  // [20,70,50,5],
+  // [20,70,5,20],
+  // [20,90,70,5],
+  // [90,20,5,75],
+  // [50,20,50,5],
+  // [20,10,5,70],
+  // [70,20,10,55],
+  // [70,15,20,10],
+  // [90,15,10,10, 'meta'] 
 ]
 
 // pętla, pobierająca elementy tablicy map jako wall
@@ -168,6 +170,8 @@ const modal = {
       justify-content:center;
       text-align:center;
       text:center;
+      box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
     `
 
       // display:none;
