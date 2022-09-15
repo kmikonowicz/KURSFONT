@@ -169,6 +169,7 @@ const modal = {
       padding:1rem 4 rem;
       border-radius:1rem;
       cursor:pointer;
+      text-aling:center;
       `
     button.onclick = function () { modal.hide() }
     modal.dom.append(button)
@@ -186,5 +187,5 @@ const modal = {
 }
 
 modal.init()
-modal.show('Kliknij...')
+modal.show('KLIKNIJ NA NIEBIESKI KAFELEK, ABY ROZPOCZĄĆ GRĘ PRZESUŃ KURSOR NA POMARAŃCZOWY, ABY WYGRAĆ')
 game.init()
