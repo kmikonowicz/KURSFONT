@@ -44,6 +44,7 @@ function makeWall(x, y, w, h, type = 'wall') {
 // tablica map przechowująca tablice zawierające informacje o ścianie
 // (każdy pojedyńczy element tablicy map to jedna ściana)
 const map = [
+  [80,0,20,20,'time'],
   [0,0,20,20, 'start'],
   [10,20,20,10],
   [20,30,20,10],
@@ -76,10 +77,14 @@ for(const wall of map){
   makeWall(...wall)
 }
 
+// detect mobile or desktop
+
 // mechanika gry
 const game = {
   // definiujemy wszystkie aktywne elementy gry
+  maxTime:5,
   buttons: {
+    time: document.querySelector('.time'),
     start: document.querySelector('.start'),
     meta: document.querySelector('.meta'),
     walls: document.querySelectorAll('.wall'),
@@ -89,6 +94,8 @@ const game = {
   init(){
     // przypisz do pola start możliwość kliknięcia i rozpoczęcia gry
     game.buttons.start.onclick = function () { game.start() }
+    game.time=game.maxTime
+    game.buttons.time.innerHTML = game.time
   },
 
   start(){ // start gry
@@ -106,6 +113,14 @@ const game = {
       // słuchaczy (eventListenerów)
         wall.addEventListener('mousemove', game.wallListener )
     }
+
+    game.interval = setInterval(function(){
+      game.time--
+        if (game.time < 0){game.over(false)}
+      // console.log("LOGUJĘ")
+      game.buttons.time.innerHTML = game.time
+    }, 1000)
+
     console.log("GAME STARTED")
   },
 
@@ -129,10 +144,12 @@ const game = {
     // wyświetl odpowiedni komunikat
     if(result){
       // console.log("YOU WIN!")
-      modal.show('WYGRANA!')
+      modal.show('WYGRANA!', 'rgb(130, 214, 130)')
+      document.body.style.backgroundColor = "rgb(130, 214, 130)"
     }else{
       // console.log("YOU LOSE")
-      modal.show('PRZEGRANA')
+      modal.show('PRZEGRANA', 'red')
+      document.body.style.backgroundColor = "red"
     }
     // zdejmij słuchacza z pola meta (przestajemy nasłuchiwać kursor 
     // na polu meta)
@@ -143,6 +160,9 @@ const game = {
     for(const wall of game.buttons.walls){
         wall.removeEventListener('mousemove', game.wallListener)
     }
+
+    clearInterval(game.interval)
+
     // przygotuj nową grę
     game.init()
   }
@@ -193,13 +213,14 @@ const modal = {
     modal.dom.append(button)
   },
 
-  show(text) { 
+  show(text,) { 
     modal.dom.style.display = "flex";
     modal.h1.innerHTML=text
   },
 
   hide(){
     modal.dom.style.display = "none";
+    document.body.style.backgroundColor = "#fff"
   }
 
 }
