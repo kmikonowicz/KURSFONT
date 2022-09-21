@@ -1,0 +1,30 @@
+body {
+  background-color: royalblue;
+  margin: 0;
+}
+body main {
+  border: 2px dashed red;
+}
+body main header .city {
+  border: 2px dashed blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main header .city .mainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main header .city .mainInfo img {
+  max-height: 7rem;
+}
+body main header .city .mainInfo h2 {
+  margin: 0;
+}
+body main .content {
+  border: 2px dashed rgb(224, 235, 21);
+}
+body main .content .cube {
+  border: 2px dashed rgb(249, 188, 8);
+}/*# sourceMappingURL=style.css.map */
