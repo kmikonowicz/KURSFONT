@@ -31,6 +31,9 @@ const getWeatherInfo = (lat, lon) => {
       list = res.list
       changeCubeInfo(0)
 
+      console.log("RES LISTA: ", res.list)
+
+
       // for(const cube of res.list){
       //   console.log(cube)
       //   makeWeatherCube(cube)
@@ -57,6 +60,8 @@ const getWeatherInfo = (lat, lon) => {
 // }
 
 const changeCubeInfo = index =>{
+  console.log("list", list)
+  console.log("INDEX", index)
   console.log("EL", list[index].dt_txt)
   document.querySelector(".cube h3 span").innerHTML = list[index].dt_txt;
   document.querySelector(".cube h3 img").src = `http://openweathermap.org/img/wn/${list[index].weather[0].icon}.png`;
@@ -68,6 +73,8 @@ const changeCubeInfo = index =>{
 
 const getLatLonDependOfName = () => {
   const value = document.querySelector("#location").value
+  console.log(value)
+
   fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value}&appid=f7475169b48c1a3e45bdcaa1b374c413`)
   .then(res => res.json())
   .then(res => {
@@ -75,8 +82,7 @@ const getLatLonDependOfName = () => {
     // console.log("lon", res[0].lon)
     console.log(res)
     getWeatherInfo(res[0].lat, res[0].lon)
-    document.getElementById("value")
-    window.onload = getWeatherInfo
-  })
 
+  })
 }
+getLatLonDependOfName()
