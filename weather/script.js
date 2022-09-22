@@ -23,10 +23,10 @@ const getWeatherInfo = (lat, lon) => {
       // document.querySelector(".city h2") .innerText = "KATOWICE"
 
         // USTAWIAMY MAIN HEADER
-      document.querySelector(".city h2") .innerText = res.city.name
-      document.querySelector("img").src = "https://countryflagsapi.com/svg/"+res.city.country
-      document.querySelector(".city .sunrise") .innerText = timeConverter(res.city.sunrise)
-      document.querySelector(".city .sunset") .innerText = timeConverter(res.city.sunset)
+      console.log(document.querySelector(".city h2").innerText = res.city.name  )
+      document.querySelector("img").src = "https://countryflagsapi.com/svg/" +res.city.country
+      document.querySelector(".city .sunrise").innerText = timeConverter(res.city.sunrise);
+      document.querySelector(".city .sunset").innerText = timeConverter(res.city.sunset);
 
       list = res.list
       changeCubeInfo(0)
@@ -59,28 +59,27 @@ const getWeatherInfo = (lat, lon) => {
 //     document.querySelector('.content').append(cube)
 // }
 
-const changeCubeInfo = index =>{
+const changeCubeInfo = index => {
   console.log("list", list)
   console.log("INDEX", index)
-  console.log("EL", list[index].dt_txt)
-  document.querySelector(".cube h3 span").innerHTML = list[index].dt_txt;
-  document.querySelector(".cube h3 img").src = `http://openweathermap.org/img/wn/${list[index].weather[0].icon}.png`;
-  document.querySelector(".cube h4").innerHTML = list[index].weather[0].description;
-  document.querySelector(".weatherMain h3").innerHTML = list[index].main.feels_like +"°C"
-  document.querySelector(".minMax .min").innerHTML = list[index].main.temp_min+"°C"
-  document.querySelector(".minMax .max").innerHTML = list[index].main.temp_max+"°C"
+  console.log("EL:", list[index].dt_txt)
+  document.querySelector(" .cube h3 span").innerHTML = list[index].dt_txt
+  document.querySelector(" .cube h3 img").src = `https://openweathermap.org/img/wn/${list[index].weather[0].icon}.png`
+  document.querySelector(" .cube h4").innerHTML = list[index].weather[0].description
+  document.querySelector(" .weatherMain h3").innerHTML = list[index].main.feels_like + "°C"
+  document.querySelector(" .minMax .min").innerHTML = list[index].main.temp_min + "°C"
+  document.querySelector(" .minMax .max").innerHTML = list[index].main.temp_max + "°C"
 }
 
-const getLatLonDependOfName = () => {
+const getLatLonDependOfName = () => { 
   const value = document.querySelector("#location").value
   console.log(value)
-
-  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value}&appid=f7475169b48c1a3e45bdcaa1b374c413`)
+ fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${value}&appid=70e5b97ff739ae2d836bed3a3f1cf33d`)
   .then(res => res.json())
   .then(res => {
     // console.log("lat", res[0].lat)
     // console.log("lon", res[0].lon)
-    console.log(res)
+    // console.log(res)
     getWeatherInfo(res[0].lat, res[0].lon)
 
   })
