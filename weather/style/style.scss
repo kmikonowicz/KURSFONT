@@ -1,43 +1,50 @@
 body{
-    background-color: royalblue;
+    background-color: rgb(55, 95, 215);
     margin: 0;
     main{
-        border: 5px dashed red;
+        // border: 5px dashed red;
         header{
             .city{
-                border: 5px dashed blue;
+                // border: 5px dashed blue;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                margin: 1rem 1rem;
                 .mainInfo{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     img{
                         max-height: 7rem;
+                        border-radius: 1rem;
                     }
                     h2{
                         margin: 0;
                     }
+
                 }
                 }
+
             }
         .content{
             display: flex;
             flex-direction: column;
             align-items:center;
-            background-color: rgb(118, 140, 205);
+            background-color: rgb(210, 215, 230);
             box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
             box-shadow: inset 0px 0px 71px 26px rgba(83, 90, 171, 1);
+            padding-top: 2rem;
+            margin-left: 3rem;
+            margin-right: 3rem;
 
 
             #range{
                 width: 40%;
                 transform: scale(2);
             }
-            border:5px dashed rgb(224, 235, 21);
+            // border:5px dashed rgb(224, 235, 21);
             .cube{
-              border:2px dashed rgb(249, 188, 8);
+            //   border:2px dashed rgb(249, 188, 8);
               padding: 2rem 0;
               margin-bottom: 2rem;
               h3, h4{
@@ -46,7 +53,7 @@ body{
               }
               .weatherMain{
                 .minMax{
-                    border:2px dashed red;
+                    // border:2px dashed red;
                     display: flex;
                     justify-content: center;
             }
@@ -54,6 +61,12 @@ body{
               }
             }
           }
-// kkk
+
     }
-  
+    .searchLocation{
+        background-color: rgb(22, 37, 153);
+        display: flex;
+        justify-content: center;
+        padding: 1rem 1rem;
+        
+    }
