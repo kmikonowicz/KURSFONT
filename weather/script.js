@@ -29,8 +29,8 @@ let list = []
 const getLatLonDependOfName = () => {
   const value = document.querySelector("#location").value
   // document.querySelector("#location").value = ""
-  // fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value}&appid=b1259f102d2dfed9e28cf4bb377baa9e`)
-  fetch(`https://raw.githubusercontent.com/apietryga/kurs/master/api/weather/location/${value.toLowerCase()}`)
+  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value}&appid=b1259f102d2dfed9e28cf4bb377baa9e`)
+  // fetch(`https://raw.githubusercontent.com/apietryga/kurs/master/api/weather/location/${value.toLowerCase()}`)
   .then(res => res.json())
   .then(res => { getWeatherInfo(res[0].lat, res[0].lon) })
 }
@@ -39,8 +39,8 @@ const getLatLonDependOfName = () => {
 const getWeatherInfo = (lat, lon) => {
   // fetch jest funkcją pobierającą informacje z innego miejsca w internetcie (głównie z api)
   // ten konkretny pobiera informacje nt pogody na podstawie lat i lon
-  // fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b1259f102d2dfed9e28cf4bb377baa9e&units=metric&lang=pl`)
-  fetch(`https://raw.githubusercontent.com/apietryga/kurs/master/api/weather/info/lat%3D${lat}%26lon%3D${lon}`)
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b1259f102d2dfed9e28cf4bb377baa9e&units=metric&lang=pl`)
+  // fetch(`https://raw.githubusercontent.com/apietryga/kurs/master/api/weather/info/lat%3D${lat}%26lon%3D${lon}`)
   // development fetch (do pracy)
   .then(res => res.json()) // przerabiamy otrzymane informacje na postać JSON
   .then(res => {  // wewnątrz tej funkcji operujemy zmienną res, która zawiera informacje zwrotne z API

@@ -7,6 +7,7 @@ body main header .city {
   justify-content: space-between;
   align-items: center;
   margin: 1rem 1rem;
+  color: white;
 }
 body main header .city .mainInfo {
   display: flex;
@@ -31,6 +32,10 @@ body main .content {
   padding-top: 2rem;
   margin-left: 3rem;
   margin-right: 3rem;
+  transition-duration: 3s;
+}
+body main .content .content:hover {
+  background-color: yellow;
 }
 body main .content #range {
   width: 40%;

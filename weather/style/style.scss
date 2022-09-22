@@ -10,6 +10,7 @@ body{
                 justify-content: space-between;
                 align-items: center;
                 margin: 1rem 1rem;
+                color: white;
                 .mainInfo{
                     display: flex;
                     flex-direction: column;
@@ -37,6 +38,12 @@ body{
             padding-top: 2rem;
             margin-left: 3rem;
             margin-right: 3rem;
+            transition-duration:3s;
+
+        
+        .content:hover{
+            background-color: yellow;
+        }
 
 
             #range{
