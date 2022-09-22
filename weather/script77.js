@@ -1,4 +1,3 @@
-// console.log('hello world')
 function timeConverter(UNIX_timestamp){
     var a = new Date(UNIX_timestamp * 1000);
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -14,14 +13,21 @@ function timeConverter(UNIX_timestamp){
   console.log(timeConverter(0));
 
 let list=[]
+
 const getWeatherInfo = (lat, lon) => {
   fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=04d03c358e8933ac6823da54c340c97b&units=metric&lang=pl`)
+  // fetch('https://api.openweathermap.org/data/2.5/forecast?lat=50.2649&lon=19.0238&appid=04d03c358e8933ac6823da54c340c97b&units=metric&lang=pl')
   .then(res => res.json())
   .then(res => {
       // console.log(res.city.name)
       // const h2 = Weatherap.queryselector("h2")
       // document.querySelector(".city h2") .innerText = "KATOWICE"
 
+      // const person = {
+      //     name: "John"
+      // }
+
+      // console.log(person.name)
         // USTAWIAMY MAIN HEADER
       document.querySelector(".city h2") .innerText = res.city.name
       document.querySelector("img").src = "https://countryflagsapi.com/svg/"+res.city.country
@@ -30,6 +36,14 @@ const getWeatherInfo = (lat, lon) => {
 
       list = res.list
       changeCubeInfo(0)
+      // console.log(res.list)
+      // console.log("RES LISTA", res.list)
+      // makeWeatherCube(res.list[0])
+      // makeWeatherCube(res.list[1])
+      // makeWeatherCube(res.list[2])
+      // makeWeatherCube(res.list[3])
+      // makeWeatherCube(res.list[4])
+      // makeWeatherCube(res.list[5])
 
       // for(const cube of res.list){
       //   console.log(cube)
@@ -57,6 +71,9 @@ const getWeatherInfo = (lat, lon) => {
 // }
 
 const changeCubeInfo = index =>{
+  // console.log("List", list)
+  // console.log("INDEX", index)
+
   console.log("EL", list[index].dt_txt)
   document.querySelector(".cube h3 span").innerHTML = list[index].dt_txt;
   document.querySelector(".cube h3 img").src = `http://openweathermap.org/img/wn/${list[index].weather[0].icon}.png`;
@@ -75,8 +92,6 @@ const getLatLonDependOfName = () => {
     // console.log("lon", res[0].lon)
     console.log(res)
     getWeatherInfo(res[0].lat, res[0].lon)
-    document.getElementById("value")
-    window.onload = getWeatherInfo
   })
 
 }
