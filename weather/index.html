@@ -7,11 +7,18 @@
   <title>Weather APP</title>
   <link rel="stylesheet" href="style/style.css">
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
   <header>
     <div class="searchLocation">
-      <input type="text" id="location" value="Opole">
+      <input 
+        value="Alicante"
+        type="text" 
+        id="location" 
+        onclick="this.value=''"
+        placeholder="Lokalizacja"
+      />
       <button onclick="getLatLonDependOfName()">SZUKAJ</button>
     </div>
   </header>
@@ -19,11 +26,13 @@
   <main>
     <header>
       <div class="city">
+        <span class="material-symbols-outlined">light_mode</span>
         <div class="sunrise">SUNRISE</div>
         <div class="mainInfo">
           <img src="https://countryflagsapi.com/svg/PL" alt="PL FLAG">
           <h2>Warszawa</h2>
         </div>
+        <span class="material-symbols-outlined">wb_twilight </span>
         <div class="sunset">SUNSET</div>
       </div>
     </header>
@@ -34,6 +43,7 @@
         id="range" 
         min="0" 
         max="39"
+        value="0"
         onchange="changeCubeInfo(this.value)"
         onmousemove="changeCubeInfo(this.value)"
         ontouchmove="changeCubeInfo(this.value)"
@@ -66,3 +76,4 @@
 
 </body>
 </html>
+
