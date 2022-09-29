@@ -1,0 +1,41 @@
+
+body { 
+    background-color: greenyellow;
+    
+    .examHeader{
+        background-color: rgb(24, 114, 30);
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+        text-align: flex-end;
+        h1,h2{
+            margin:1.5rem;
+        }
+    }
+    
+    .examWrapper{
+        text-align: justify;
+        margin:2rem;
+        h2{
+            background-color: rgb(121, 185, 121);
+            text-align: center;
+        }
+    }
+
+    footer{
+        background-color: black;
+        color: white;
+        padding-top: 2rem;
+        display:flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        ol{
+            color: none;
+            margin:.5rem;
+            padding:1rem;
+        }
+        p{
+            margin:.5rem;
+        }
+    }
+}
